@@ -1,0 +1,1095 @@
+###########################
+# News Events
+###########################
+
+add_namespace = mod_events.news
+
+# Chamberlain appointed
+news_event = {
+	id = mod_events.news.1
+	title = mod_events.news.1.t
+	desc = mod_events.news.1.d
+	picture = GFX_news_chamberlain_immortal
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.1.a
+	}
+}
+# Chamberlain rejected
+news_event = {
+	id = mod_events.news.2
+	title = mod_events.news.2.t
+	desc = mod_events.news.2.d
+	picture = GFX_news_chamberlain_immortal
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.2.a
+	}
+}
+
+# Zombie Outbreak
+news_event = {
+	id = mod_events.news.3
+	title = mod_events.news.3.t
+	desc = mod_events.news.3.d
+	picture = GFX_news_zombie_outbreak
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.3.a
+	}
+}
+
+# Join faction
+news_event = {
+	id = mod_events.news.4
+	title = mod_events.news.4.t
+	desc = mod_events.news.4.d
+	picture = GFX_news_event_hitler_handshake
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.4.a
+	}
+}
+
+# Soviet Union collapse
+news_event = {
+	id = mod_events.news.5
+	title = mod_events.news.5.t
+	desc = mod_events.news.5.d
+	picture = GFX_news_soviet_union_collapse
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.5.a
+	}
+}
+# Independence wave
+news_event = {
+	id = mod_events.news.6
+	title = mod_events.news.6.t
+	desc = mod_events.news.6.d
+	picture = GFX_news_event_dutch_soldiers_indonesia
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.6.a
+	}
+}
+# Symbol of war
+news_event = {
+	id = mod_events.news.7
+	title = mod_events.news.7.t
+	desc = mod_events.news.7.d
+	picture = GFX_news_symbol_of_war
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.7.a
+	}
+}
+# Symbol of peace
+news_event = {
+	id = mod_events.news.8
+	title = mod_events.news.8.t
+	desc = mod_events.news.8.d
+	picture = GFX_news_symbol_of_peace
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.8.a
+	}
+}
+# THR forms
+news_event = {
+	id = mod_events.news.9
+	title = mod_events.news.9.t
+	desc = mod_events.news.9.d
+	picture = GFX_news_the_holy_realm
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.9.a
+	}
+}
+# Africa
+news_event = {
+	id = mod_events.news.10
+	title = mod_events.news.10.t
+	desc = mod_events.news.10.d
+	picture = GFX_news_event_generic_african_unity
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.10.a
+	}
+}
+# Natural Disasters
+news_event = { # EQ
+	id = mod_events.news.11
+	title = mod_events.news.11.t
+	desc = mod_events.news.11.d
+	picture = GFX_news_event_generic_ruins
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.11.a
+	}
+}
+news_event = { # F
+	id = mod_events.news.12
+	title = mod_events.news.12.t
+	desc = mod_events.news.12.d
+	picture = GFX_news_event_generic_ruins
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.12.a
+	}
+}
+news_event = { # T
+	id = mod_events.news.13
+	title = mod_events.news.13.t
+	desc = mod_events.news.13.d
+	picture = GFX_news_event_generic_ruins
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.13.a
+	}
+}
+news_event = { # W
+	id = mod_events.news.14
+	title = mod_events.news.14.t
+	desc = mod_events.news.14.d
+	picture = GFX_news_event_generic_ruins
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.14.a
+	}
+}
+news_event = { # LS
+	id = mod_events.news.15
+	title = mod_events.news.15.t
+	desc = mod_events.news.15.d
+	picture = GFX_news_event_generic_ruins
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.15.a
+	}
+}
+news_event = { # H
+	id = mod_events.news.16
+	title = mod_events.news.16.t
+	desc = mod_events.news.16.d
+	picture = GFX_news_event_generic_ruins
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.16.a
+	}
+}
+# Cannibalism
+news_event = {
+	id = mod_events.news.17
+	title = mod_events.news.17.t
+	desc = mod_events.news.17.d
+	picture = GFX_news_cannibalism
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.17.a
+	}
+}
+# Brilliant Scientist
+news_event = {
+	id = mod_events.news.18
+	title = mod_events.news.18.t
+	desc = mod_events.news.18.d
+	picture = GFX_news_event_generic_research_lab
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.18.a
+	}
+}
+# UK collapse
+news_event = {
+	id = mod_events.news.19
+	title = mod_events.news.19.t
+	desc = mod_events.news.19.d
+	picture = GFX_news_event_eng_decolonization
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.19.a
+	}
+}
+# Random resource
+news_event = {
+	id = mod_events.news.20
+	title = mod_events.news.20.t
+	desc = mod_events.news.20.d
+	picture = GFX_news_random_resource
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.20.a
+	}
+}
+# Black Plague
+news_event = {
+	id = mod_events.news.21
+	title = mod_events.news.21.t
+	desc = mod_events.news.21.d
+	picture = GFX_news_event_indian_famine
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.21.a
+	}
+}
+# 1391; Spain war on jews
+news_event = {
+	id = mod_events.news.22
+	title = mod_events.news.22.t
+	desc = mod_events.news.22.d
+	picture = GFX_news_dead_jews
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.22.a
+	}
+}
+# SOV Nukes
+news_event = {
+	id = mod_events.news.23
+	title = mod_events.news.23.t
+	desc = mod_events.news.23.d
+	picture = GFX_news_event_nuke
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.23.a
+	}
+}
+# Sweden video game hoi
+news_event = {
+	id = mod_events.news.24
+	title = mod_events.news.24.t
+	desc = mod_events.news.24.d
+	picture = GFX_news_hoi
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.24.a
+	}
+}
+# Alien technology in Antarctica; Alien UFO crashed in antarctica
+news_event = {
+	id = mod_events.news.25
+	title = mod_events.news.25.t
+	desc = mod_events.news.25.d
+	picture = GFX_news_antarctica
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.25.a
+	}
+}
+news_event = {
+	id = mod_events.news.26
+	title = mod_events.news.26.t
+	desc = mod_events.news.26.d
+	picture = GFX_news_ufo
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.26.a
+	}
+}
+# Move industry to desert
+news_event = {
+	id = mod_events.news.27
+	title = mod_events.news.27.t
+	desc = mod_events.news.27.d
+	picture = GFX_news_desert
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.27.a
+	}
+}
+# Master of doctrines
+news_event = {
+	id = mod_events.news.28
+	title = mod_events.news.28.t
+	desc = mod_events.news.28.d
+	picture = GFX_news_event_military_planning
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.28.a
+	}
+}
+# Asteroid Incoming
+news_event = {
+	id = mod_events.news.29
+	title = mod_events.news.29.t
+	desc = mod_events.news.29.d
+	picture = GFX_news_asteroid
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.29.a
+	}
+}
+# Asteroid prediction correct
+news_event = {
+	id = mod_events.news.30
+	title = mod_events.news.30.t
+	desc = mod_events.news.30.d
+	picture = GFX_news_asteroid
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.30.a
+	}
+}
+# Riches found
+news_event = {
+	id = mod_events.news.31
+	title = mod_events.news.31.t
+	desc = mod_events.news.31.d
+	picture = GFX_news_random_resource
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.31.a
+	}
+}
+# Asteroid impact
+news_event = {
+	id = mod_events.news.32
+	title = mod_events.news.32.t
+	desc = mod_events.news.32.d
+	picture = GFX_news_asteroid_impact
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.32.a
+	}
+}
+# Time Traveler
+news_event = {
+	id = mod_events.news.33
+	title = mod_events.news.33.t
+	desc = mod_events.news.33.d
+	picture = GFX_news_time_traveler
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.33.a
+	}
+}
+# Berlin-Moscow
+news_event = {
+	id = mod_events.news.34
+	title = mod_events.news.34.t
+	desc = mod_events.news.34.d
+	picture = GFX_news_event_hitler_handshake
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.34.a
+	}
+}
+# USA intel
+news_event = {
+	id = mod_events.news.35
+	title = mod_events.news.35.t
+	desc = mod_events.news.35.d
+	picture = GFX_news_event_usa_japan_at_war
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.35.a
+	}
+}
+# Terrorists
+news_event = {
+	id = mod_events.news.36
+	title = mod_events.news.36.t
+	desc = mod_events.news.36.d
+	picture = GFX_news_event_generic_riot
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.36.a
+	}
+}
+# Acid Rain start
+news_event = {
+	id = mod_events.news.37
+	title = mod_events.news.37.t
+	desc = mod_events.news.37.d
+	picture = GFX_news_acid_rain
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.37.a
+	}
+}
+# Acid Rain end
+news_event = {
+	id = mod_events.news.38
+	title = mod_events.news.38.t
+	desc = mod_events.news.38.d
+	picture = GFX_news_acid_rain_end
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.38.a
+	}
+}
+# Industrial Boom
+news_event = {
+	id = mod_events.news.39
+	title = mod_events.news.39.t
+	desc = mod_events.news.39.d
+	picture = GFX_news_event_050
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.39.a
+	}
+}
+# Great Depression
+news_event = {
+	id = mod_events.news.40
+	title = mod_events.news.40.t
+	desc = mod_events.news.40.d
+	picture = GFX_news_event_gathering_protest
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.40.a
+	}
+}
+# Alien Spacecraft
+news_event = {
+	id = mod_events.news.41
+	title = mod_events.news.41.t
+	desc = mod_events.news.41.d
+	picture = GFX_news_alien_spacecraft
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.41.a
+	}
+}
+# Mysterious population
+news_event = {
+	id = mod_events.news.42
+	title = mod_events.news.42.t
+	desc = mod_events.news.42.d
+	picture = GFX_news_mysterious_population
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.42.a
+	}
+}
+# Malta Crusaders
+news_event = {
+	id = mod_events.news.43
+	title = mod_events.news.43.t
+	desc = mod_events.news.43.d
+	picture = GFX_news_crusaders
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.43.a
+	}
+}
+# Murder Mystery
+news_event = {
+	id = mod_events.news.44
+	title = mod_events.news.44.t
+	desc = mod_events.news.44.d
+	picture = GFX_news_event_german_inspect_troops
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.44.a
+	}
+}
+# Lawrence of Arabia
+news_event = {
+	id = mod_events.news.45
+	title = mod_events.news.45.t
+	desc = mod_events.news.45.d
+	picture = GFX_news_desert
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.45.a
+	}
+}
+# Disease in divisions
+news_event = {
+	id = mod_events.news.46
+	title = mod_events.news.46.t
+	desc = mod_events.news.46.d
+	picture = GFX_news_event_ETH_ethiopian_warriors
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.46.a
+	}
+}
+# Equipment from heavens
+news_event = {
+	id = mod_events.news.47
+	title = mod_events.news.47.t
+	desc = mod_events.news.47.d
+	picture = GFX_news_equipment_heavens
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.47.a
+	}
+}
+# Space race over
+news_event = {
+	id = mod_events.news.48
+	title = mod_events.news.48.t
+	desc = mod_events.news.48.d
+	picture = GFX_news_space_race_end
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.48.a
+	}
+}
+# Third Balkan war
+news_event = {
+	id = mod_events.news.49
+	title = mod_events.news.49.t
+	desc = mod_events.news.49.d
+	picture = GFX_news_event_ETH_ethiopian_warriors
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.49.a
+	}
+}
+# BOOM!
+news_event = {
+	id = mod_events.news.50
+	title = mod_events.news.50.t
+	desc = mod_events.news.50.d
+	picture = GFX_news_event_nuke
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.50.a
+	}
+}
+# Bulgaria ambitions
+news_event = {
+	id = mod_events.news.51
+	title = mod_events.news.51.t
+	desc = mod_events.news.51.d
+	picture = GFX_news_old_great_bulgaria
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.51.a
+	}
+}
+# Great embargo
+news_event = {
+	id = mod_events.news.52
+	title = mod_events.news.52.t
+	desc = mod_events.news.52.d
+	picture = GFX_news_event_020
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.52.a
+	}
+}
+# Intel leak
+news_event = {
+	id = mod_events.news.53
+	title = mod_events.news.53.t
+	desc = mod_events.news.53.d
+	picture = GFX_news_intel_leak
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.53.a
+	}
+}
+# Great Infr project
+news_event = {
+	id = mod_events.news.54
+	title = mod_events.news.54.t
+	desc = mod_events.news.54.d
+	picture = GFX_news_infrastructure_project
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.54.a
+	}
+}
+# Great navy
+news_event = {
+	id = mod_events.news.55
+	title = mod_events.news.55.t
+	desc = mod_events.news.55.d
+	picture = GFX_news_event_020
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.55.a
+	}
+}
+# Aggressive AI
+news_event = {
+	id = mod_events.news.56
+	title = mod_events.news.56.t
+	desc = mod_events.news.56.d
+	picture = GFX_news_event_generic_rally_3
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.56.a
+	}
+}
+# End puppet
+news_event = {
+	id = mod_events.news.57
+	title = mod_events.news.57.t
+	desc = mod_events.news.57.d
+	picture = GFX_news_event_003
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.57.a
+	}
+}
+# CIC
+news_event = {
+	id = mod_events.news.58
+	title = mod_events.news.58.t
+	desc = mod_events.news.58.d
+	picture = GFX_news_event_tank_factory
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.58.a
+	}
+}
+# Generalissimo
+news_event = {
+	id = mod_events.news.59
+	title = mod_events.news.59.t
+	desc = mod_events.news.59.d
+	picture = GFX_news_generalissimo
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.59.a
+	}
+}
+# ZIN
+news_event = {
+	id = mod_events.news.60
+	title = mod_events.news.60.t
+	desc = mod_events.news.60.d
+	picture = GFX_news_zin
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.60.a
+	}
+}
+# Boxer rebellion
+news_event = {
+	id = mod_events.news.61
+	title = mod_events.news.61.t
+	desc = mod_events.news.61.d
+	picture = GFX_news_event_chinese_soldiers_march
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.61.a
+	}
+}
+# Gods predictions failed
+news_event = {
+	id = mod_events.news.62
+	title = mod_events.news.62.t
+	desc = mod_events.news.62.d
+	picture = GFX_news_gods_of_africa
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.62.a
+	}
+}
+# Ireland claims north
+news_event = {
+	id = mod_events.news.63
+	title = mod_events.news.63.t
+	desc = mod_events.news.63.d
+	picture = GFX_news_event_generic_army
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.63.a
+	}
+}
+# Mongols rise
+news_event = {
+	id = mod_events.news.64
+	title = mod_events.news.64.t
+	desc = mod_events.news.64.d
+	picture = GFX_news_mongols_rise
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.64.a
+	}
+}
+# Japan lands in California
+news_event = {
+	id = mod_events.news.65
+	title = mod_events.news.65.t
+	desc = mod_events.news.65.d
+	picture = GFX_news_california
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.65.a
+	}
+}
+# Master
+news_event = {
+	id = mod_events.news.66
+	title = mod_events.news.66.t
+	desc = mod_events.news.66.d
+	picture = GFX_news_event_indonesia_handover
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.66.a
+	}
+}
+# Equipment transfer
+news_event = {
+	id = mod_events.news.67
+	title = mod_events.news.67.t
+	desc = mod_events.news.67.d
+	picture = GFX_news_event_glorious_vehicle
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.67.a
+	}
+}
+# Research failure
+news_event = {
+	id = mod_events.news.68
+	title = mod_events.news.68.t
+	desc = mod_events.news.68.d
+	picture = GFX_news_failed_research
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.68.a
+	}
+}
+# Airship arrives back
+news_event = {
+	id = mod_events.news.69
+	title = mod_events.news.69.t
+	desc = mod_events.news.69.d
+	picture = GFX_news_airship_back
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.69.a
+	}
+}
+# Airship crashed
+news_event = {
+	id = mod_events.news.70
+	title = mod_events.news.70.t
+	desc = mod_events.news.70.d
+	picture = GFX_news_event_026
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.70.a
+	}
+}
+# British tax
+news_event = {
+	id = mod_events.news.71
+	title = mod_events.news.71.t
+	desc = mod_events.news.71.d
+	picture = GFX_news_event_009
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.71.a
+	}
+}
+# Claiming the world
+news_event = {
+	id = mod_events.news.72
+	title = mod_events.news.72.t
+	desc = mod_events.news.72.d
+	picture = GFX_news_world_claims
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.72.a
+	}
+}
+# Greenland sold
+news_event = {
+	id = mod_events.news.73
+	title = mod_events.news.73.t
+	desc = mod_events.news.73.d
+	picture = GFX_news_greenland_sold
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.73.a
+	}
+}
+# Galicia ceded
+news_event = {
+	id = mod_events.news.74
+	title = mod_events.news.74.t
+	desc = mod_events.news.74.d
+	picture = GFX_news_galicia
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.74.a
+	}
+}
+# Half gone
+news_event = {
+	id = mod_events.news.75
+	title = mod_events.news.75.t
+	desc = mod_events.news.75.d
+	picture = GFX_news_event_023
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.75.a
+	}
+}
+# Occupation revolt
+news_event = {
+	id = mod_events.news.76
+	title = mod_events.news.76.t
+	desc = mod_events.news.76.d
+	picture = GFX_news_event_034
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.76.a
+	}
+}
+# New special ore
+news_event = {
+	id = mod_events.news.77
+	title = mod_events.news.77.t
+	desc = mod_events.news.77.d
+	picture = GFX_news_new_ore
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.77.a
+	}
+}
+# Border War
+news_event = {
+	id = mod_events.news.78
+	title = mod_events.news.78.t
+	desc = mod_events.news.78.d
+	picture = GFX_news_event_generic_army
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.78.a
+	}
+}
