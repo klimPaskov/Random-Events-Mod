@@ -9,5 +9,5 @@ If you have ideas for our mod or you have found a bug, do not hesitate to open a
 ## Events documentation
 All events that have been added and are planned to be added can be found in this document: https://docs.google.com/document/d/14cokGI4BtoB106a6vC0VR4uoDFy-nVfKcgEF9sG5IQM
 
-## Contribution
-Do you want to become a contributor? Read CONTRIBUTING.md
+## Contributing
+Do you want to become a contributor? Read [CONTRIBUTING.md](CONTRIBUTING.md)
