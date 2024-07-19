@@ -356,7 +356,7 @@ country_event = {
 	}
 }
 ###########################
-# Timed Events
+## Timed Events
 ###########################
 
 # 1 # Communism spreads
@@ -423,8 +423,36 @@ country_event = {
 					producer = CHI
 				}
 			}
+			if = { limit = { NOT = { has_global_flag = zombies_first_appereance } }
+				news_event = { id = mod_events.news.3 days = 2 }
+			}
+			set_global_flag = zombies_first_appereance
+		}		
+	}
+}
+country_event = { # Cure activated
+	id = mod_events.timed_events.244
+	title = mod_events.timed_events.244.t
+	desc = mod_events.timed_events.244.d
+	picture = GFX_report_event_generic_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		effect_tooltip = {
+			if = { limit = { is_in_tech_sharing_group = cure_sharing }
+				add_timed_idea = {
+					idea = cure_activated
+					days = 120
+				}
+			} else = {
+				add_timed_idea = {
+					idea = cure_activated
+					days = 360
+				}
+			}
 		}
-		news_event = { id = mod_events.news.3 days = 2 }
+		name = mod_events.timed_events.244.a
 	}
 }
 # 3 # God's Plan; The Holy Realm
@@ -554,9 +582,8 @@ country_event = {
 	
 	immediate = {
 		random_country = {
-			limit = { has_war = no }
 			random_other_country = {
-				limit = { always = yes }
+				limit = { NOT = { has_war_with = PREV } }
 				declare_war_on = {
 					type = annex_everything
 					target = PREV
@@ -1186,6 +1213,17 @@ country_event = {
 	option = {
 		ai_chance = { factor = 90 }
 		name = mod_events.timed_events.23.a
+		if = { limit = { tag = SAF is_subject = yes } 
+			overlord = {
+				set_autonomy = {
+					target = SAF
+					autonomous_state = autonomy_free
+					end_wars = yes
+					end_civil_wars = yes
+				}
+			}
+		}
+		leave_faction = yes
 		set_cosmetic_tag = AFR
 		add_ideas = AFR_african_ambission
 		set_politics = {
@@ -4112,6 +4150,21 @@ country_event = {
 		name = mod_events.timed_events.111.a
 	}
 }
+country_event = {
+	id = mod_events.timed_events.246
+	title = mod_events.timed_events.246.t
+	desc = mod_events.timed_events.246.d
+	picture = GFX_report_event_generic_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		add_stability = -0.05
+		add_political_power = 100
+		set_country_flag = critical_mass_panic
+		name = mod_events.timed_events.246.a
+	}
+}
 # 50 # The great embargo
 country_event = {
 	id = mod_events.timed_events.112
@@ -6590,13 +6643,22 @@ country_event = { # Warning
 	desc = mod_events.timed_events.239.d
 	picture = GFX_report_event_africa_tribe_member
 	
-	timeout_days = 5
+	timeout_days = 4
 	is_triggered_only = yes
 	
 	option = {
 		name = mod_events.timed_events.239.a
-		add_stability = -0.10
-		add_political_power = 50
+		add_political_power = -50
+		if = { limit = { has_global_flag = demand_1 } 
+			activate_decision = demand_1
+			hidden_effect = { add_political_power = -50 }
+		}else_if = { limit = { has_global_flag = demand_2 } 
+			activate_decision = demand_2
+		}else_if = { limit = { has_global_flag = demand_3 } 
+			activate_decision = demand_3
+		}else_if = { limit = { has_global_flag = demand_4 } 
+			activate_decision = demand_4
+		}
 		hidden_effect = {
 			if = { limit = { has_global_flag = demand_2 }
 				if = { limit = { has_army_experience < 20 }
@@ -6619,6 +6681,294 @@ country_event = { # Warning
 					set_political_power = 50
 				}
 			}
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = mod_events.timed_events.239.b
+		add_stability = -0.10
+		hidden_effect = {
+			if = { limit = { has_global_flag = demand_2 }
+				if = { limit = { has_army_experience < 20 }
+					army_experience = 20
+				}
+				if = { limit = { command_power < 20 }
+					add_command_power = 20
+				}
+				if = {
+					limit = {
+						has_equipment = { infantry_equipment < 2000 }
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 2000
+					}
+				}
+			} else_if = { limit = { has_global_flag = demand_1 }
+				if = { limit = { has_political_power < 50 }
+					set_political_power = 50
+				}
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = { # Warning 2
+	id = mod_events.timed_events.247
+	title = mod_events.timed_events.247.t
+	desc = mod_events.timed_events.247.d
+	picture = GFX_report_event_africa_tribe_member
+	
+	timeout_days = 4
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.timed_events.247.a
+		add_stability = -0.05
+		hidden_effect = {
+			if = { limit = { has_global_flag = demand_2 }
+				if = { limit = { has_army_experience < 20 }
+					army_experience = 5
+				}
+				if = { limit = { command_power < 20 }
+					add_command_power = 10
+				}
+				if = {
+					limit = {
+						has_equipment = { infantry_equipment < 2000 }
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1000
+					}
+				}
+			} else_if = { limit = { has_global_flag = demand_1 }
+				if = { limit = { has_political_power < 50 }
+					set_political_power = 50
+				}
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+country_event = { # Gods of africa predict
+	id = mod_events.timed_events.245
+	title = mod_events.timed_events.245.t
+	desc = mod_events.timed_events.245.d
+	picture = GFX_report_event_africa_tribe_member
+	
+	timeout_days = 5
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.timed_events.245.a
+		hidden_effect = {
+			if = { limit = { check_variable = { global.africa_gods_predict = 30 } }
+				random_country = {
+					random_list = {
+						10 = { country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 } } # Earthquake
+						10 = { if = { limit = { any_owned_state = { is_coastal = yes } } 
+								country_event = { id = mod_events.timed_events.29 days = 1 random_days = 4 } # Flood
+							} else = {
+								country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 }
+							}
+						}
+						10 = { country_event = { id = mod_events.timed_events.30 days = 1 random_days = 4 } } # Tornado
+						10 = { country_event = { id = mod_events.timed_events.31 days = 1 random_days = 4 } } # Wildfire
+						10 = { country_event = { id = mod_events.timed_events.32 days = 1 random_days = 4 } } # Lightning Storm
+						10 = { country_event = { id = mod_events.timed_events.33 days = 1 random_days = 4 } } # Hurricane
+					}
+				}
+				random = {
+					chance = 75
+					set_variable = { global.africa_gods_predict = 20 }
+				}
+			}
+			else_if = { limit = {check_variable = { global.africa_gods_predict = 20 } }
+				random_country = {
+					random_list = {
+						10 = { country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 } } # Earthquake
+						10 = { if = { limit = { any_owned_state = { is_coastal = yes } } 
+								country_event = { id = mod_events.timed_events.29 days = 1 random_days = 4 } # Flood
+							} else = {
+								country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 }
+							}
+						}
+						10 = { country_event = { id = mod_events.timed_events.30 days = 1 random_days = 4 } } # Tornado
+						10 = { country_event = { id = mod_events.timed_events.31 days = 1 random_days = 4 } } # Wildfire
+						10 = { country_event = { id = mod_events.timed_events.32 days = 1 random_days = 4 } } # Lightning Storm
+						10 = { country_event = { id = mod_events.timed_events.33 days = 1 random_days = 4 } } # Hurricane
+					}
+					random_list = {
+						10 = { country_event = { id = mod_events.timed_events.97 } } # MASSIVE FLOOD
+						10 = { country_event = { id = mod_events.timed_events.103 } } # EARTH EARTHQUAKE
+						10 = { country_event = { id = mod_events.timed_events.105 } } # BOOM!
+						10 = { country_event = { id = mod_events.timed_events.63 } } # ASTEROID IMPACT
+						10 = { country_event = { id = mod_events.timed_events.74 } } # Terrorists
+						10 = { country_event = { id = mod_events.timed_events.35 } } # Cannibals
+						10 = { country_event = { id = mod_events.timed_events.233 } } # Sandstorm
+					}
+				}
+				random = {
+					chance = 75
+					set_variable = { global.africa_gods_predict = 15 }
+				}
+			}
+			else_if = { limit = { check_variable = { global.africa_gods_predict = 15 } }
+				country_event = { id = mod_events.timed_events.247 days = 1 }
+				random_country = {
+					random_list = {
+						10 = { country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 } } # Earthquake
+						10 = { if = { limit = { any_owned_state = { is_coastal = yes } } 
+								country_event = { id = mod_events.timed_events.29 days = 1 random_days = 4 } # Flood
+							} else = {
+								country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 }
+							}
+						}
+						10 = { country_event = { id = mod_events.timed_events.30 days = 1 random_days = 4 } } # Tornado
+						10 = { country_event = { id = mod_events.timed_events.31 days = 1 random_days = 4 } } # Wildfire
+						10 = { country_event = { id = mod_events.timed_events.32 days = 1 random_days = 4 } } # Lightning Storm
+						10 = { country_event = { id = mod_events.timed_events.33 days = 1 random_days = 4 } } # Hurricane
+					}random_list = {
+						10 = { country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 } } # Earthquake
+						10 = { if = { limit = { any_owned_state = { is_coastal = yes } } 
+								country_event = { id = mod_events.timed_events.29 days = 1 random_days = 4 } # Flood
+							} else = {
+								country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 }
+							}
+						}
+						10 = { country_event = { id = mod_events.timed_events.30 days = 1 random_days = 4 } } # Tornado
+						10 = { country_event = { id = mod_events.timed_events.31 days = 1 random_days = 4 } } # Wildfire
+						10 = { country_event = { id = mod_events.timed_events.32 days = 1 random_days = 4 } } # Lightning Storm
+						10 = { country_event = { id = mod_events.timed_events.33 days = 1 random_days = 4 } } # Hurricane
+					}
+					random_list = {
+						10 = { country_event = { id = mod_events.timed_events.97 days = 1 random_days = 4 } } # MASSIVE FLOOD
+						10 = { country_event = { id = mod_events.timed_events.103 days = 1 random_days = 4 } } # EARTH EARTHQUAKE
+						10 = { country_event = { id = mod_events.timed_events.105 days = 1 random_days = 4 } } # BOOM!
+						10 = { country_event = { id = mod_events.timed_events.63 days = 1 random_days = 4 } } # ASTEROID IMPACT
+						10 = { country_event = { id = mod_events.timed_events.74 days = 1 random_days = 4 } } # Terrorists
+						10 = { country_event = { id = mod_events.timed_events.35 days = 1 random_days = 4 } } # Cannibals
+						10 = { country_event = { id = mod_events.timed_events.233 days = 1 random_days = 4 } } # Sandstorm
+					}
+					country_event = { id = mod_events.timed_events.43 days = 1 random_days = 4 } # BLACK DEATH
+					country_event = { id = mod_events.timed_events.2 days = 1 random_days = 4 } # ZOMBIES
+					country_event = { id = mod_events.timed_events.224 } # half gone
+				}
+				set_variable = { global.africa_gods_predict = 10 }
+			}
+			else_if = { limit = { check_variable = { global.africa_gods_predict = 10 } }
+				random_country = {
+					random_list = {
+						10 = { country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 } } # Earthquake
+						10 = { if = { limit = { any_owned_state = { is_coastal = yes } } 
+								country_event = { id = mod_events.timed_events.29 days = 1 random_days = 4 } # Flood
+							} else = {
+								country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 }
+							}
+						}
+						10 = { country_event = { id = mod_events.timed_events.30 days = 1 random_days = 4 } } # Tornado
+						10 = { country_event = { id = mod_events.timed_events.31 days = 1 random_days = 4 } } # Wildfire
+						10 = { country_event = { id = mod_events.timed_events.32 days = 1 random_days = 4 } } # Lightning Storm
+						10 = { country_event = { id = mod_events.timed_events.33 days = 1 random_days = 4 } } # Hurricane
+					}random_list = {
+						10 = { country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 } } # Earthquake
+						10 = { if = { limit = { any_owned_state = { is_coastal = yes } } 
+								country_event = { id = mod_events.timed_events.29 days = 1 random_days = 4 } # Flood
+							} else = {
+								country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 }
+							}
+						}
+						10 = { country_event = { id = mod_events.timed_events.30 days = 1 random_days = 4 } } # Tornado
+						10 = { country_event = { id = mod_events.timed_events.31 days = 1 random_days = 4 } } # Wildfire
+						10 = { country_event = { id = mod_events.timed_events.32 days = 1 random_days = 4 } } # Lightning Storm
+						10 = { country_event = { id = mod_events.timed_events.33 days = 1 random_days = 4 } } # Hurricane
+					}random_list = {
+						10 = { country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 } } # Earthquake
+						10 = { if = { limit = { any_owned_state = { is_coastal = yes } } 
+								country_event = { id = mod_events.timed_events.29 days = 1 random_days = 4 } # Flood
+							} else = {
+								country_event = { id = mod_events.timed_events.28 days = 1 random_days = 4 }
+							}
+						}
+						10 = { country_event = { id = mod_events.timed_events.30 days = 1 random_days = 4 } } # Tornado
+						10 = { country_event = { id = mod_events.timed_events.31 days = 1 random_days = 4 } } # Wildfire
+						10 = { country_event = { id = mod_events.timed_events.32 days = 1 random_days = 4 } } # Lightning Storm
+						10 = { country_event = { id = mod_events.timed_events.33 days = 1 random_days = 4 } } # Hurricane
+					}
+					random_list = {
+						10 = { country_event = { id = mod_events.timed_events.97 days = 1 random_days = 4 } } # MASSIVE FLOOD
+						10 = { country_event = { id = mod_events.timed_events.63 days = 1 random_days = 4 } } # ASTEROID IMPACT
+						10 = { country_event = { id = mod_events.timed_events.74 days = 1 random_days = 4 } } # Terrorists
+						10 = { country_event = { id = mod_events.timed_events.233 days = 1 random_days = 4 } } # Sandstorm
+					}random_list = {
+						10 = { country_event = { id = mod_events.timed_events.103 days = 1 random_days = 4 } } # EARTH EARTHQUAKE
+						10 = { country_event = { id = mod_events.timed_events.105 days = 1 random_days = 4 } } # BOOM!
+						10 = { country_event = { id = mod_events.timed_events.35 days = 1 random_days = 4 } } # Cannibals
+					}
+					country_event = { id = mod_events.timed_events.2 days = 1 random_days = 4 } # ZOMBIES
+					country_event = { id = mod_events.timed_events.224 } # half gone again!
+				}
+				country_event = { id = mod_events.timed_events.239 } # WARNING
+				set_variable = { global.africa_gods_predict = 5 }
+			}
+			else_if = { limit = { check_variable = { global.africa_gods_predict = 5 } }
+				scoped_sound_effect  = "weather_thunder_01"
+				scoped_sound_effect  = "weather_thunder_02"
+				scoped_sound_effect  = "weather_thunder_03"
+				scoped_sound_effect  = "weather_thunder_04"
+				scoped_sound_effect  = "weather_cloud_winds"
+				scoped_sound_effect  = "airplane_bomb_01"
+				scoped_sound_effect  = "airplane_bomb_09"
+				scoped_sound_effect  = "airplane_bomb_10"
+				scoped_sound_effect  = "super_heavy_battleship_attack_01"
+				news_event = { id = mod_events.news.62 days = 1 }
+				every_other_country = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = hostile_status
+					}
+				}
+				every_state = { # A disaster; moon collides with Earth
+					every_country = {
+						launch_nuke = {
+							state = PREV
+							controller = THIS
+							use_nuke = no
+						}
+					}
+					remove_building = {
+						type = arms_factory
+						level = 3
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 3
+					}
+					remove_building = {
+						type = infrastructure
+						level = 5
+					}
+					damage_building  = {
+						type = arms_factory
+						damage = 10
+					}
+					damage_building  = {
+						type = industrial_complex
+						damage = 10
+					}
+					damage_building  = {
+						type = infrastructure
+						damage = 5
+					}
+					add_manpower = -5000000
+					set_state_category = wasteland
+				}
+				clear_variable = global.africa_gods_predict
+			}
+		}
+		if = { limit = { NOT = { check_variable = { global.africa_gods_predict = 0 } } }
+			activate_mission = africa_gods_predict_timeout
 		}
 		ai_chance = { factor = 100 }
 	}
@@ -7449,6 +7799,7 @@ country_event = {
 	title = mod_events.timed_events.176.t
 	
 	is_triggered_only = yes
+	hidden = yes
 	
 	immediate = {
 		hidden_effect = {
@@ -7580,7 +7931,7 @@ country_event = {
 	id = mod_events.timed_events.181
 	title = mod_events.timed_events.181.t
 	desc = mod_events.timed_events.181.d
-	picture = GFX_report_event_indonesia_handover
+	picture = GFX_report_event_hitler_handshake
 	
 	is_triggered_only = yes
 	
@@ -7750,7 +8101,7 @@ country_event = { # didn't crash
 		name = mod_events.timed_events.188.a
 	}
 }
-country_event = { # didn't crash
+country_event = { # didn't crash: USA
 	id = mod_events.timed_events.235
 	title = mod_events.timed_events.235.t
 	desc = mod_events.timed_events.235.d
@@ -7762,6 +8113,41 @@ country_event = { # didn't crash
 		add_political_power = 200
 		add_stability = 0.2
 		name = mod_events.timed_events.235.a
+	}
+}
+country_event = { # over our country
+	id = mod_events.timed_events.248
+	title = mod_events.timed_events.248.t
+	desc = mod_events.timed_events.248.d
+	picture = GFX_report_event_airship
+	
+	timeout_days = 4
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = { set_country_flag = airship_above }
+	}
+	
+	option = {
+		add_political_power = 10
+		name = mod_events.timed_events.248.a
+	}
+}
+country_event = { # no longer over our country
+	id = mod_events.timed_events.249
+	title = mod_events.timed_events.249.t
+	desc = mod_events.timed_events.249.d
+	picture = GFX_report_event_airship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = { clr_country_flag = airship_above }
+	}
+	
+	option = {
+		add_stability = 0.02
+		name = mod_events.timed_events.249.a
 	}
 }
 # 81 # British taxes
@@ -8121,7 +8507,6 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
-# TODO: doesn't work for some reason
 # 89 # Tech sharing groups
 country_event = {
 	id = mod_events.timed_events.207
@@ -8133,23 +8518,21 @@ country_event = {
 	
 	immediate = {
 		every_country = {
-			limit = { OR = { tag = ENG tag = SOV tag = GER tag = JAP tag = USA } }
+			limit = { OR = { tag = ENG tag = SOV tag = GER tag = JAP } }
 			
 			if = { limit = { tag = ENG }
-				add_to_tech_sharing_group = commonwealth_research
+				add_to_tech_sharing_group = mod_research_group_1
 			} else_if = { limit = { tag = SOV } 
-				add_to_tech_sharing_group = comintern_research
+				add_to_tech_sharing_group = mod_research_group_2
 			}else_if = { limit = { tag = GER } 
-				add_to_tech_sharing_group = axis_research
+				add_to_tech_sharing_group = mod_research_group_3
 			}else_if = { limit = { tag = JAP } 
-				add_to_tech_sharing_group = japanese_research
-			}else_if = { limit = { tag = USA } 
-				add_to_tech_sharing_group = us_research
+				add_to_tech_sharing_group = mod_research_group_4
 			}
 			country_event = { id = mod_events.timed_events.209 }
 		}
 		every_country = {
-			limit = { NOT = { OR = { tag = ENG tag = SOV tag = GER tag = JAP tag = USA } } }
+			limit = { NOT = { OR = { tag = ENG tag = SOV tag = GER tag = JAP } } }
 			country_event = { id = mod_events.timed_events.208 }
 		}
 	}
@@ -8163,7 +8546,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		add_to_tech_sharing_group = commonwealth_research
+		add_to_tech_sharing_group = mod_research_group_1
 		ENG = { country_event = { id = mod_events.timed_events.210 } }
 		add_opinion_modifier = {
 			target = ENG
@@ -8181,11 +8564,11 @@ country_event = {
 			}
 		}
 		trigger = {
-			country_exists = ENG
+			NOT = { has_war_with = ENG }
 		}
 	}
 	option = {
-		add_to_tech_sharing_group = comintern_research
+		add_to_tech_sharing_group = mod_research_group_2
 		SOV = { country_event = { id = mod_events.timed_events.210 } }
 		add_opinion_modifier = {
 			target = SOV
@@ -8200,11 +8583,11 @@ country_event = {
 			}
 		}
 		trigger = {
-			country_exists = SOV
+			NOT = { has_war_with = SOV }
 		}
 	}
 	option = {
-		add_to_tech_sharing_group = axis_research
+		add_to_tech_sharing_group = mod_research_group_3
 		GER = { country_event = { id = mod_events.timed_events.210 } }
 		add_opinion_modifier = {
 			target = GER
@@ -8220,12 +8603,12 @@ country_event = {
 			}
 		}
 		trigger = {
-			country_exists = GER
+			NOT = { has_war_with = GER }
 			NOT = { ROOT = { capital_scope = { is_on_continent = asia } } }
 		}
 	}
 	option = {
-		add_to_tech_sharing_group = japanese_research
+		add_to_tech_sharing_group = mod_research_group_4
 		JAP = { country_event = { id = mod_events.timed_events.210 } }
 		add_opinion_modifier = {
 			target = JAP
@@ -8241,35 +8624,11 @@ country_event = {
 			}
 		}
 		trigger = {
-			country_exists = JAP
+			NOT = { has_war_with = JAP }
 			ROOT = { capital_scope = { is_on_continent = asia } }
 		}
 	}
-	option = {
-		add_to_tech_sharing_group = us_research
-		USA = { country_event = { id = mod_events.timed_events.210 } }
-		add_opinion_modifier = {
-			target = USA
-			modifier = small_increase
-		}
-		name = mod_events.timed_events.208.f
-		ai_chance = { 
-			factor = 5 
-			modifier = {
-				add = 100
-				OR = {
-					has_government = USA
-					capital_scope = { is_on_continent = south_america } 
-				}
-				OR = { 
-					NOT = { is_in_faction_with = ENG }
-				}
-			}
-		}
-		trigger = {
-			country_exists = USA
-		}
-	}
+	
 	option = {
 		name = mod_events.timed_events.208.g
 		ai_chance = { factor = 10 }

@@ -18,6 +18,31 @@ mod_events_master_decision_category = {
 				NOT = { check_variable = { global.most_attraction_points = THIS.attraction_points } }
 				add = 2
 			}
+			modifier = {
+				FROM = { has_government = ROOT }
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 10
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 10
+				}
+				add = 1
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 0.5
+				}
+				add = 1
+			}
 			
 		}
 		
@@ -74,6 +99,17 @@ mod_events_master_decision_category = {
 			modifier = {
 				NOT = { check_variable = { global.most_attraction_points = THIS.attraction_points } }
 				add = 2
+			}
+			modifier = {
+				FROM = { has_government = ROOT }
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 10
+				}
+				add = 1
 			}
 		}
 		
@@ -171,9 +207,6 @@ mod_events_master_decision_category = {
 		available = {
 			NOT = { has_war_with = global.minor_to_attract }
 		}
-		visible = {
-			FROM = { NOT = { has_government = ROOT } }
-		}
 		icon = GFX_decision_generic_speech
 		days_re_enable = 8
 		cost = 20
@@ -193,6 +226,10 @@ mod_events_master_decision_category = {
 			modifier = {
 				FROM = { is_ai = no }
 				add = 3
+			}
+			modifier = {
+				check_variable = { global.most_attraction_points = FROM.attraction_points }
+				add = 2
 			}
 		}
 		complete_effect = {

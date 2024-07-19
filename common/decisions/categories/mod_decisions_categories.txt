@@ -4,13 +4,14 @@ mod_events_decision_category = {
 		has_global_flag = events_activated
 	}
 	icon = GFX_decision_category_generic_crisis
-	priority = 100
+	priority = 101
 }
 mod_events_zzz_cure_category = {
 	visible = {
 		ZZZ = { exists = yes }
+		NOT = { tag = ZZZ }
 	}
-	icon = GFX_decision_category_ufo
+	icon = GFX_decision_category_zombies_cure
 	priority = 99
 }
 mod_events_ufo_decision_category = {
@@ -60,9 +61,10 @@ mod_events_africa_gods_decision_category = {
 			has_global_flag = demand_3
 			has_global_flag = demand_4
 		}
+		NOT = { check_variable = { global.africa_gods_predict = 0 } }
 	}
-	icon = GFX_decision_category_ETH_orginization_of_african_unity
-	priority = 99
+	icon = GFX_decision_category_CHL_mapuche_reconcilliation_decisions
+	priority = 100
 }
 mod_events_master_decision_category = {
 	visible = {

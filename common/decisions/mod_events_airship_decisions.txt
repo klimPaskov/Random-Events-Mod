@@ -11,7 +11,7 @@ mod_events_airship_decision_category = {
 		}
 		
 		is_good = no
-		days_mission_timeout = 5 # average speed of the airship is 12.6 km/h, 10 times slower than Hindenburg
+		days_mission_timeout = 1 # average speed of the airship is 66 km/h (slower than the average speed of Hindenburg)
 		icon = GFX_decision_airship
 		fixed_random_seed = no
 		
@@ -26,14 +26,21 @@ mod_events_airship_decision_category = {
 					
 					clear_array = global.airship_regions
 					add_to_variable = { global.airship_d = 1 }
-					airship_moves = yes
+					airship_moves = yes # Get new regions and countries in these regions
+					every_country = {
+						limit = { has_country_flag = airship_country NOT = { has_country_flag = airship_above } }
+						country_event = { id = mod_events.timed_events.248 }
+					}
+					every_country = {
+						limit = { NOT = { has_country_flag = airship_country } has_country_flag = airship_above }
+						country_event = { id = mod_events.timed_events.249 }
+					}
 					if = { limit = { check_variable = { global.airship_d = 120 } } # 119 is the end destination
 						clr_global_flag = airship
 						every_country = { limit = { NOT = { tag = USA } } country_event = { id = mod_events.timed_events.188 } }
 						USA = { country_event = { id = mod_events.timed_events.235 } }
 						news_event = { id = mod_events.news.69 days = 2 }
 					}
-						
 				}
 			}
 		}

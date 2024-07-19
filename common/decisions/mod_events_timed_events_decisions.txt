@@ -19,7 +19,8 @@ mod_events_decision_category = {
 			hidden_effect = {
 				random_list = {
 					1 = { country_event = { id = mod_events.timed_events.1 } } # COMMUNISM SPREADS														# 1
-					1 = { modifier = { factor = 0 any_country = { is_neighbor_of = ZZZ } } # ZZZ														# 2
+					1 = { modifier = { factor = 0 OR = { any_country = { is_neighbor_of = ZZZ } 
+										has_game_rule = { rule = mod_events_ZZZ option = no } } } # ZZZ													# 2
 						country_event = { id = mod_events.timed_events.2 } 
 					}
 					1 = { modifier = { factor = 0 is_in_array = { global.fire_once_events = 3 } } # THR				  				  					# 3
@@ -126,7 +127,8 @@ mod_events_decision_category = {
 						add_to_array = { global.fire_once_events = 48 }
 						country_event = { id = mod_events.timed_events.107 }
 					}
-					1 = { modifier = { factor = 0 is_in_array = { global.fire_once_events = 49 } } # MASS PANIC											# 49
+					1 = { modifier = { factor = 0 OR = { is_in_array = { global.fire_once_events = 49 } 
+										has_game_rule = { rule = mod_events_mass_panic option = no } } } # MASS PANIC										# 49
 						add_to_array = { global.fire_once_events = 49 }
 						country_event = { id = mod_events.timed_events.109 }
 					}
@@ -174,7 +176,8 @@ mod_events_decision_category = {
 						add_to_array = { global.fire_once_events = 69 }
 						country_event = { id = mod_events.timed_events.149 }
 					}
-					1 = { modifier = { factor = 0 OR = { is_in_array = { global.fire_once_events = 70 } date < 1937.01.01 } } # AFRICA GODS				# 70
+					1 = { modifier = { factor = 0 OR = { is_in_array = { global.fire_once_events = 70 } date < 1937.01.01 
+										has_game_rule = { rule = mod_events_gods_of_africa option = no } } } # AFRICA GODS								# 70
 						add_to_array = { global.fire_once_events = 70 }
 						country_event = { id = mod_events.timed_events.152 }
 					}
@@ -199,7 +202,7 @@ mod_events_decision_category = {
 						add_to_array = { global.fire_once_events = 75 }
 						country_event = { id = mod_events.timed_events.166 }
 					}
-					1 = { modifier = { factor = 0 OR = { has_war_with = USA has_country_flag = USA_testing_denied } } # USA TESTS WEAPONS	# 76
+					1 = { modifier = { factor = 0 OR = { has_war_with = USA has_country_flag = USA_testing_denied } } # USA TESTS WEAPONS				# 76
 						country_event = { id = mod_events.timed_events.172 }
 					}
 					1 = { country_event = { id = mod_events.timed_events.173 } } # FREE EQ FROM MAJOR TO MINOR											# 77
@@ -234,7 +237,8 @@ mod_events_decision_category = {
 						add_to_array = { global.fire_once_events = 90 }
 						country_event = { id = mod_events.timed_events.211 }
 					}
-					1 = { modifier = { factor = 0 OR = { is_in_array = { global.fire_once_events = 91 } threat < 0.9 } } # THE REVOLUTION				# 91
+					1 = { modifier = { factor = 0 OR = { is_in_array = { global.fire_once_events = 91 } threat < 0.9 
+										has_game_rule = { rule = mod_events_REV option = no } } } # THE REVOLUTION										# 91
 						add_to_array = { global.fire_once_events = 91 }
 						country_event = { id = mod_events.timed_events.213 }
 					}
@@ -490,8 +494,7 @@ mod_events_decision_category = {
 			country_event = { id = mod_events.timed_events.229 days = 193 } # 97
 			country_event = { id = mod_events.timed_events.231 days = 195 } # 98
 			country_event = { id = mod_events.timed_events.233 days = 197 } # 99
-			
-			
+			# 100
 		}
 	}
 	

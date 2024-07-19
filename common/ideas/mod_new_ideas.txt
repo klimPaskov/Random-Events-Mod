@@ -14,24 +14,20 @@ ideas = {
 			
 			modifier = {
 				# percentual
+				supply_consumption_factor = -0.25
 				political_power_cost = 10
 				neutrality_drift = 100
-				conscription = 0.40
+				conscription = 0.50
 				experience_gain_army = -10
 				enemy_justify_war_goal_time = -1.00
-				production_factory_max_efficiency_factor = -1.00
-				production_speed_buildings_factor = -1.00
 				local_resources_factor = -1.00
 				ai_focus_aggressive_factor = 1000
 				defence = -0.50
-				army_core_defence_factor = 0.05
-				army_speed_factor = 0.05
 				army_attack_speed_factor = 0.5
-				ai_desired_divisions_factor = 1000 # yes
+				ai_desired_divisions_factor = 10000 # yes
 				ai_get_ally_desire_factor = -5000
 				ai_join_ally_desire_factor = -5000
 				join_faction_tension = 5000
-				send_volunteers_tension = 5000
 				attrition = -1.00 # Zombies don't need supplies
 				equipment_capture = 0.1
 				no_supply_grace = 240
@@ -39,6 +35,54 @@ ideas = {
 				land_night_attack = 0.75
 				max_dig_in_factor = -1.00
 				consumer_goods_factor = 2.00
+			}
+		}
+	}
+	country = {
+		searching_for_cure = {
+			picture = jap_duplicate_research
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = -0.5
+			}
+		}
+	}
+	country = {
+		cure_activated = {
+			picture = generic_research_bonus
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			targeted_modifier = {
+				tag = ZZZ
+				attack_bonus_against = 1.00
+				defense_bonus_against = 1.00
+				breakthrough_bonus_against = 1.00
+			}
+		}
+	}
+	country = {
+		cure_sharing_bonus = {
+			picture = generic_research_bonus
+			
+			allowed = {
+				tag = ZZZ
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				defence = -0.25
+				army_attack_factor = -0.25
+				army_speed_factor = -0.25
+				conscription = -0.25
 			}
 		}
 	}
@@ -64,7 +108,7 @@ ideas = {
 				production_factory_max_efficiency_factor = 1.00
 				production_factory_efficiency_gain_factor = 0.5 
 				production_speed_buildings_factor = 1.00
-				industrial_capacity_factory = 0.6
+				industrial_capacity_factory = 0.5
 			}
 		}
 	}
@@ -128,10 +172,13 @@ ideas = {
 			}
 			
 			cancel = {
-                all_state = { is_on_continent = africa is_controlled_by = AFR } 
+                all_state = { is_on_continent = africa is_controlled_by = AFR }
             }
 			
 			modifier = {
+				ai_get_ally_desire_factor = -50
+				ai_join_ally_desire_factor = -50
+				join_faction_tension = 0.5
 				army_speed_factor = 0.1
 				army_core_defence_factor = 0.25
 				army_core_attack_factor = 0.25
@@ -186,7 +233,7 @@ ideas = {
 			}
 			
 			modifier = {
-				research_speed_factor = 0.75
+				research_speed_factor = 0.5
 			}
 		}
 	}
@@ -504,7 +551,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.5
 				industrial_capacity_factory = 0.5
 				consumer_goods_factor = -0.50
-				conscription = 1.00
+				conscription = 0.10
 			}
 		}
 	}
@@ -537,12 +584,13 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				consumer_goods_factor = -1.00
-				production_factory_max_efficiency_factor = 1.00
-				production_speed_buildings_factor = 2.00
-				local_resources_factor = 5.00
+				consumer_goods_factor = -0.25
+				production_factory_max_efficiency_factor = 0.5
+				production_speed_buildings_factor = 0.5
+				local_resources_factor = 2.00
 				stability_weekly = 0.005
-				political_power_gain = 1.5
+				political_power_gain = 1.00
+				research_speed_factor = 0.5
 			}
 		}
 	}
@@ -587,7 +635,7 @@ ideas = {
 	}
 	country = {
 		galaxies_mix_good_1 = {
-			picture = mass_panic
+			picture = mass_panic_good_1
 			
 			allowed_civil_war = {
 				always = no
@@ -604,7 +652,7 @@ ideas = {
 	}
 	country = {
 		galaxies_mix_good_2 = {
-			picture = mass_panic
+			picture = mass_panic_good_2
 			
 			allowed_civil_war = {
 				always = no
@@ -622,7 +670,7 @@ ideas = {
 	}
 	country = {
 		galaxies_mix_good_3 = {
-			picture = mass_panic
+			picture = mass_panic_good_3
 			
 			allowed_civil_war = {
 				always = no
@@ -640,7 +688,7 @@ ideas = {
 	}
 	country = {
 		galaxies_mix_bad_1 = {
-			picture = mass_panic
+			picture = mass_panic_bad_1
 			
 			allowed_civil_war = {
 				always = no
@@ -658,7 +706,7 @@ ideas = {
 	}
 	country = {
 		galaxies_mix_bad_2 = {
-			picture = mass_panic
+			picture = mass_panic_bad_2
 			
 			allowed_civil_war = {
 				always = no
@@ -670,7 +718,7 @@ ideas = {
 				research_speed_factor = -0.25
 				local_resources_factor = -0.25
 				stability_weekly = -0.005
-				political_power_gain = -0.5
+				political_power_gain = -0.25
 			}
 		}
 	}
@@ -869,7 +917,7 @@ ideas = {
 	}
 	country = {
 		wisdom_of_lenin = {
-			picture = wisdom_of_lenin
+			picture = socialist_science_focus
 			allowed = {
 				tag = REV
 			}
@@ -937,5 +985,6 @@ ideas = {
 			}
 		}
 	}
+	
 	
 }

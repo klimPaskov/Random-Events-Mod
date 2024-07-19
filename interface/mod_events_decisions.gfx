@@ -25,6 +25,9 @@ spriteTypes = {
 	}spriteType = {
 		name = "GFX_decision_acid"
 		texturefile = "gfx/interface/decisions/decision_acid.dds"
+	}spriteType = {
+		name = "GFX_decision_category_zombies_cure"
+		texturefile = "gfx/interface/decisions/decision_category_zombies_cure.dds"
 	}
 	
 	# Acid rain #

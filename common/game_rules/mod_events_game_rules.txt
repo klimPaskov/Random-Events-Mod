@@ -1,0 +1,60 @@
+mod_events_REV = {
+	name = "MOD_EVENTS_REV"
+    group = "MOD_EVENTS"
+    icon = "GFX_wargoals"
+    default = {
+        name = "ALLOWED"
+        text = "RULE_OPTION_ALLOWED"
+        desc = "RULE_ALLOW_REV_DESC"
+    }
+    option = {
+        name = "BLOCKED"
+        text = "RULE_OPTION_BLOCKED"
+        desc = "RULE_ALLOW_REV_BLOCKED_DESC"
+    }
+}
+mod_events_ZZZ = {
+	name = "MOD_EVENTS_ZZZ"
+    group = "MOD_EVENTS"
+    icon = "GFX_wargoals"
+    default = {
+        name = "ALLOWED"
+        text = "RULE_OPTION_ALLOWED"
+        desc = "RULE_ALLOW_ZZZ_DESC"
+    }
+    option = {
+        name = "BLOCKED"
+        text = "RULE_OPTION_BLOCKED"
+        desc = "RULE_ALLOW_ZZZ_BLOCKED_DESC"
+    }
+}
+mod_events_gods_of_africa = {
+	name = "MOD_EVENTS_GODS_OF_AFRICA"
+    group = "MOD_EVENTS"
+    icon = "GFX_wargoals"
+    default = {
+        name = "ALLOWED"
+        text = "RULE_OPTION_ALLOWED"
+        desc = "RULE_ALLOW_GODS_OF_AFRICA_DESC"
+    }
+    option = {
+        name = "BLOCKED"
+        text = "RULE_OPTION_BLOCKED"
+        desc = "RULE_ALLOW_GODS_OF_AFRICA_BLOCKED_DESC"
+    }
+}
+mod_events_mass_panic = {
+	name = "MOD_EVENTS_MASS_PANIC"
+    group = "MOD_EVENTS"
+    icon = "GFX_wargoals"
+    default = {
+        name = "ALLOWED"
+        text = "RULE_OPTION_ALLOWED"
+        desc = "RULE_ALLOW_MASS_PANIC_DESC"
+    }
+    option = {
+        name = "BLOCKED"
+        text = "RULE_OPTION_BLOCKED"
+        desc = "RULE_ALLOW_MASS_PANIC_BLOCKED_DESC"
+    }
+}

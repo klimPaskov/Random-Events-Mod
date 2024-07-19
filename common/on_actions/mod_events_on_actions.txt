@@ -1,17 +1,22 @@
 on_actions = {
     on_startup = {
         effect = {
-			if = { limit = { is_multiplayer = yes }
-				every_country = {
-					limit = { is_ai = no }
-					country_event = mod_events.activation.2
-				}
-			} else_if = { limit = { is_multiplayer = no } 
-				every_country = {
-					limit = { is_ai = no }
-					country_event = mod_events.activation.1
-				}
+			every_country = {
+				limit = { is_ai = no }
+				country_event = mod_events.activation.1
 			}
+			
+			# if = { limit = { is_multiplayer = yes }
+				# every_country = {
+					# limit = { is_ai = no }
+					# country_event = mod_events.activation.2
+				# }
+			# } else_if = { limit = { is_multiplayer = no } 
+				# every_country = {
+					# limit = { is_ai = no }
+					# country_event = mod_events.activation.1
+				# }
+			# }
         }
     }
 	
@@ -27,7 +32,8 @@ on_actions = {
 							type = annex_everything
 						}
 					}
-				} every_state = { # Anything zombies occupy, becomes core state
+				} 
+				every_state = { # Anything zombies occupy, becomes core state
 					limit = { is_controlled_by = ZZZ NOT = { is_core_of = ZZZ } }
 					add_core_of = ZZZ
 				}
@@ -128,7 +134,7 @@ on_actions = {
 	on_daily_ZIN = {
 		effect = {
 			if = { limit = { ZIN = { has_capitulated = yes } } 
-				remove_idea = punishment_from_gods
+				remove_ideas = punishment_from_gods
 			}
 			if = { limit = { ZIN = { has_war = yes } }
 				create_unit = {
@@ -205,12 +211,19 @@ on_actions = {
 	on_daily = {
 		effect = {
 			if = { limit = { has_global_flag = airship NOT = { tag = USA } } 
-				# execute the chance every day
+				# execute the chance every day for every country
 				if = { limit = { has_country_flag = airship_country }
+					log = "Value of 'as_crash_chance' in [ROOT.GetName]: [?as_crash_chance|.0]"
 					random = {
 						chance = as_crash_chance
+						log = "Value of 'as_crash_chance' during the crash in [ROOT.GetName]: [?as_crash_chance|.0]"
 						# crash effects
 						clr_global_flag = airship
+						every_country = {
+							limit = { OR = { has_country_flag = airship_country has_country_flag = airship_above } }
+							clr_country_flag = airship_country
+							clr_country_flag = airship_above
+						}
 						random_owned_state = {
 							limit = { is_in_airship_region = yes }
 							ROOT = {
@@ -242,7 +255,7 @@ on_actions = {
 				clear_variable = as_crash_chance
 				subtract_from_variable = { as_crash_chance = as_decrease }
 				add_to_variable = { as_crash_chance = as_increase }
-				#if = { limit = { is_ai = no } log = "Value of 'as_crash_chance' in [ROOT.GetName] after decreases and increases: [?as_crash_chance|.0]" }
+				# if = { limit = { has_country_flag = airship_country } log = "Value of 'as_crash_chance' in [ROOT.GetName] after decreases and increases: [?as_crash_chance|.0]" }
 				
 				## chance modifiers:
 				# check opinion status
@@ -251,7 +264,7 @@ on_actions = {
 					divide_temp_variable = { as_opinion_usa = -10 }
 					round_temp_variable = as_opinion_usa
 					add_to_variable = { as_crash_chance = as_opinion_usa }
-					#if = { limit = { is_ai = no } log = "Value of 'as_crash_chance' in [ROOT.GetName] after checking relations: [?as_crash_chance|.0]" }
+					if = { limit = { has_country_flag = airship_country } log = "Value of 'as_crash_chance' in [ROOT.GetName] after checking relations: [?as_crash_chance|.0]" }
 				}				
 				
 				# check if there is resistance in the region
@@ -277,17 +290,17 @@ on_actions = {
 					limit = { resistance > 59 is_in_airship_region = yes }
 					add_to_variable = { ROOT.as_crash_chance = 1 }
 				}
-				#if = { limit = { is_ai = no } log = "Value of 'as_crash_chance' in [ROOT.GetName] after resistance checks: [?as_crash_chance|.0]" }
+				# if = { limit = { has_country_flag = airship_country } log = "Value of 'as_crash_chance' in [ROOT.GetName] after resistance checks: [?as_crash_chance|.0]" }
 				
 				# use state flags for more options
 				
 				# check political status whether to increase the chance
 				set_temp_variable = { as_stability = 1 }
 				subtract_from_temp_variable = { as_stability = stability }
-				multiply_temp_variable = { as_stability = 10 }
+				multiply_temp_variable = { as_stability = 5 } # 10 maybe too harsh?
 				round_temp_variable = as_stability
 				add_to_variable = { as_crash_chance = as_stability }
-				#if = { limit = { is_ai = no } log = "Value of 'as_crash_chance' in [ROOT.GetName] after stability check: [?as_crash_chance|.0]" }
+				# if = { limit = { has_country_flag = airship_country } log = "Value of 'as_crash_chance' in [ROOT.GetName] after stability check: [?as_crash_chance|.0]" }
 								
 				# check acid rain (hint: weather)
 				if = { limit = { any_owned_state = { is_in_airship_region = yes has_dynamic_modifier = { modifier = acid_clouds_state }	} }
@@ -296,7 +309,7 @@ on_actions = {
 				if = { limit = { any_owned_state = { is_in_airship_region = yes has_dynamic_modifier = { modifier = acid_rain_state } } }
 					add_to_variable = { as_crash_chance = 5 }
 				}
-				#if = { limit = { is_ai = no } log = "Value of 'as_crash_chance' in [ROOT.GetName] after acid rain check: [?as_crash_chance|.0]" }
+				# if = { limit = { has_country_flag = airship_country } log = "Value of 'as_crash_chance' in [ROOT.GetName] after acid rain check: [?as_crash_chance|.0]" }
 				
 				# check if there is war in the region
 				if = { limit = { has_war = yes any_owned_state = { is_in_airship_region = yes } } 
@@ -504,7 +517,7 @@ on_actions = {
 							REGION_ID = "[?region_id|.0]"
 						}
 					}
-					#if = { limit = { is_ai = no } log = "Value of 'as_crash_chance' in [ROOT.GetName] after deployed planes in region check: [?as_crash_chance|.0]" }
+					# if = { limit = { has_country_flag = airship_country } log = "Value of 'as_crash_chance' in [ROOT.GetName] after deployed planes in region check: [?as_crash_chance|.0]" }
 					every_owned_state = { 
 						limit = { is_in_airship_region = yes }
 						every_state_division = {
@@ -513,7 +526,7 @@ on_actions = {
 						}
 						
 					}
-					#if = { limit = { is_ai = no } log = "Value of 'as_crash_chance' in [ROOT.GetName] after anti-air battalions check: [?as_crash_chance|.0]" }
+					# if = { limit = { has_country_flag = airship_country } log = "Value of 'as_crash_chance' in [ROOT.GetName] after anti-air battalions check: [?as_crash_chance|.0]" }
 				}
 			}
 		}
@@ -522,6 +535,14 @@ on_actions = {
 	# The great revolution
 	on_capitulation = {
 		effect = {
+			# ZZZ
+			if = { limit = { tag = ZZZ } 
+				every_core_state = {
+					remove_core_of = ZZZ
+				}
+			}
+			
+			# REV
 			if = { limit = { country_exists = REV }
 				if = { limit = { FROM = { tag = REV } }
 					every_core_state = { 

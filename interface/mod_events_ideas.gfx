@@ -64,5 +64,20 @@ spriteTypes = {
 	}spriteType = {
 		name = "GFX_idea_sandstorm"
 		texturefile = "gfx/interface/ideas/idea_sandstorm.dds"
+	}spriteType = {
+		name = "GFX_idea_mass_panic_good_1"
+		texturefile = "gfx/interface/ideas/idea_mass_panic_good_1.dds"
+	}spriteType = {
+		name = "GFX_idea_mass_panic_good_2"
+		texturefile = "gfx/interface/ideas/idea_mass_panic_good_2.dds"
+	}spriteType = {
+		name = "GFX_idea_mass_panic_good_3"
+		texturefile = "gfx/interface/ideas/idea_mass_panic_good_3.dds"
+	}spriteType = {
+		name = "GFX_idea_mass_panic_bad_1"
+		texturefile = "gfx/interface/ideas/idea_mass_panic_bad_1.dds"
+	}spriteType = {
+		name = "GFX_idea_mass_panic_bad_2"
+		texturefile = "gfx/interface/ideas/idea_mass_panic_bad_2.dds"
 	}
 }

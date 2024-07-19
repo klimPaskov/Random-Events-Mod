@@ -1,6 +1,6 @@
-is_multiplayer = {
-	any_country = { is_ai = no any_other_country = { is_ai = no } }
-}
+# is_multiplayer = {
+	# any_country = { is_ai = no any_other_country = { is_ai = no } }
+# }
 
 is_desert_state = {
 	OR = {

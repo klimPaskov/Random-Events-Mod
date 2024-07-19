@@ -1,5 +1,5 @@
 scripted_gui = {
-
+	
 	acid_rain_decisions_scripted_gui = {
 		context_type = decision_category
 

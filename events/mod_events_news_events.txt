@@ -855,7 +855,7 @@ news_event = {
 		name = mod_events.news.61.a
 	}
 }
-# Gods predictions failed
+# Gods predictions failed; Moon falls into earth
 news_event = {
 	id = mod_events.news.62
 	title = mod_events.news.62.t
@@ -1093,3 +1093,32 @@ news_event = {
 		name = mod_events.news.78.a
 	}
 }
+
+news_event = {
+	id = mod_events.news.79
+	title = mod_events.news.79.t
+	desc = mod_events.news.79.d
+	picture = GFX_news_event_generic_army
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.79.a
+	}
+}
+
+news_event = {
+	id = mod_events.news.80
+	title = mod_events.news.80.t
+	desc = mod_events.news.80.d
+	picture = GFX_news_event_generic_army
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_events.news.80.a
+	}
+}
+

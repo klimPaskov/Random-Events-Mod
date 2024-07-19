@@ -38,6 +38,7 @@ mod_events_mass_panic_decision_category = {
 		}
 		remove_effect = {
 			if = { limit = { has_idea = galaxies_mix } 
+				clr_country_flag = critical_mass_panic
 				swap_ideas = {
 					remove_idea = galaxies_mix
 					add_idea = galaxies_mix_good_1
@@ -61,7 +62,7 @@ mod_events_mass_panic_decision_category = {
 					remove_idea = galaxies_mix_good_1
 					add_idea = galaxies_mix_good_2
 				}
-			}else_if = { limit = { has_idea = galaxies_mix_bad_1 } 
+			}else_if = { limit = { has_idea = galaxies_mix_bad_1 }
 				swap_ideas = {
 					remove_idea = galaxies_mix_bad_1
 					add_idea = galaxies_mix
@@ -110,6 +111,7 @@ mod_events_mass_panic_decision_category = {
 				random_list = {
 					50 = {
 						if = { limit = { has_idea = galaxies_mix } 
+							clr_country_flag = critical_mass_panic
 							swap_ideas = {
 								remove_idea = galaxies_mix
 								add_idea = galaxies_mix_good_1
@@ -161,6 +163,7 @@ mod_events_mass_panic_decision_category = {
 								add_idea = galaxies_mix_good_2
 							}
 						}else_if = { limit = { has_idea = galaxies_mix_bad_1 } 
+							if = { limit = { NOT = { has_country_flag = critical_mass_panic } } country_event = { id = mod_events.timed_events.246 days = 1 } }
 							swap_ideas = {
 								remove_idea = galaxies_mix_bad_1
 								add_idea = galaxies_mix_bad_2
@@ -178,6 +181,7 @@ mod_events_mass_panic_decision_category = {
 					random_list = {
 						75 = {
 							if = { limit = { has_idea = galaxies_mix } 
+								clr_country_flag = critical_mass_panic
 								swap_ideas = {
 									remove_idea = galaxies_mix
 									add_idea = galaxies_mix_good_1
@@ -318,6 +322,7 @@ mod_events_mass_panic_decision_category = {
 						add_idea = galaxies_mix_good_2
 					}
 				}else_if = { limit = { has_idea = galaxies_mix_bad_1 } 
+					if = { limit = { NOT = { has_country_flag = critical_mass_panic } } country_event = { id = mod_events.timed_events.246 days = 1 } }
 					swap_ideas = {
 						remove_idea = galaxies_mix_bad_1
 						add_idea = galaxies_mix_bad_2
