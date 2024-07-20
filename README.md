@@ -7,7 +7,7 @@ Download our mod here: https://steamcommunity.com/sharedfiles/filedetails/?id=31
 If you have ideas for our mod or you have found a bug, do not hesitate to open an [Issue](https://github.com/klimPaskov/Random-Events-Mod/issues) with the appropriate label.
 
 ## Events documentation
-All events that have been added and are planned to be added can be found in this document: https://docs.google.com/document/d/14cokGI4BtoB106a6vC0VR4uoDFy-nVfKcgEF9sG5IQM
+All events that have been added and are planned to be added can be found in this document: https://1drv.ms/x/s!Apa2UiJp7njxj3z4s5i3INR5AmFP?e=JeUfFL&nav=MTVfezlBOUNGODhDLUIwNkYtNERCOS1BREVDLTlCRDA2NjAwMzY2N30
 
 ## Contributing
 Do you want to become a contributor? Read [CONTRIBUTING.md](CONTRIBUTING.md)
