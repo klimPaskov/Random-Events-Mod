@@ -13,4 +13,10 @@ All events that have been added and are planned to be added can be found in this
 Do you want to become a contributor? Read [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Donate
-If you had fun playing my mod, please consider donating: https://www.paypal.com/donate/?hosted_button_id=KYWB2U3VX484N
+If you had fun playing my mod, please consider donating.
+
+<form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="2XHL2AMRC397A" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_EE/i/scr/pixel.gif" width="1" height="1" />
+</form>
