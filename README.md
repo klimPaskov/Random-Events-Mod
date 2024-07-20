@@ -11,3 +11,6 @@ All events that have been added and are planned to be added can be found in this
 
 ## Contributing
 Do you want to become a contributor? Read [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Donate
+If you had fun playing my mod, please consider donating: https://www.paypal.com/donate/?hosted_button_id=KYWB2U3VX484N
